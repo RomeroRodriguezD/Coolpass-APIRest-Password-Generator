@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Coolpass API Documentation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-theme-l1">Back to Coolpass main page</a>
+  </div>
+</div>
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:50px" >
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Coolwords API documentation</h1>
+         <p>Welcome to the Coolwords API documentation. Here you will find information on how to use the API to generate custom passwords.</p>
+            <p>The endpoint for generating custom passwords is <code>/generate-custom/&lt;int:length&gt;</code>. The length parameter indicates the length of the password to be generated.</p>
+            <p>In addition to the length parameter, you can also include the following optional parameters to include specific elements in the password:</p>
+            <ul>
+                <li><code>animals</code> - includes animal names in the password</li>
+                <li><code>colors</code> - includes color names in the password</li>
+                <li><code>cities</code> - includes city names in the password</li>
+                <li><code>famous</code> - includes famous people's names in the password</li>
+            </ul>
+            <p>For example, the following URL will generate a password of length 15 with animal names included: <code>/generate-custom/15?animals=true?famous=true</code>.</p>
+            <p>While this one will generate a password of length 10 with either animals and/or famous people names included: <code>/generate-custom/10?animals=true&famous=true</code>.</p>
+    </div>
+    <div class="w3-third w3-container">
+
+    </div>
+  </div>
+
+
+<!-- END MAIN -->
+</div>
+  <footer style="fixed-bottom">
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://github.com/RomeroRodriguezD" target="_blank">Chimpancé Inalámbrico</a></p>
+    </div>
+  </footer>
+</body>
+</html>
