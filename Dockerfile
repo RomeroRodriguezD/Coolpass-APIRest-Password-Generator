@@ -1,27 +1,26 @@
-# Utilizamos una imagen base de python:3.8
+# Python base image
 FROM python:3.10
 
-# Establecemos el directorio de trabajo
+# Working directory + environment variables
 WORKDIR /app
-
 ENV FLASK_APP=pass_api.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
-# Copiamos el archivo de requirements
+# Copy required stuff
 COPY requirements.txt .
 COPY src/ .
 COPY templates/ .
 
-# Instalamos las dependencias
+# Install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Copiamos el resto de archivos necesarios
+# Copiamos anything else on workdir
 COPY . .
 
-# Exponemos el puerto 5000
+# Expose port
 EXPOSE 5000
 
-# Ejecutamos la aplicación
+# Run flask
 CMD ["flask", "run"]
 
